@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import openai
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,9 +51,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Nutrition_Facts_Tracker.urls'
-
-OPENAI_API_KEY = 'sk-proj-IuJZf9mJkQqZajOAGCr7T3BlbkFJ49tf0yfClaYRUnZsSd82'
-openai.api_key = OPENAI_API_KEY
 
 TEMPLATES = [
     {
