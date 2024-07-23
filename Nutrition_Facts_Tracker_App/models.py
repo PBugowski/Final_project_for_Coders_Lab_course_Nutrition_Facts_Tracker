@@ -47,3 +47,16 @@ class Training(models.Model):
     exercise_5_sets = models.SmallIntegerField(verbose_name='Ilość serii:', blank=True)
     exercise_5_reps = models.SmallIntegerField(verbose_name='Ilość powtórzeń', blank=True)
     exercise_5_description = models.TextField(verbose_name='Opis ćwiczenia 5:', blank=True)
+
+
+class Meal(models.Model):
+    meal_name = models.CharField(max_length=100, unique=True, verbose_name='Nazwa posiłku:')
+    products = models.ManyToManyField(NutritionFacts)
+    energy_value = models.SmallIntegerField(verbose_name='Wartość energetyczna:', blank=True)
+    proteins = models.SmallIntegerField(verbose_name='Białko:', blank=True)
+    total_fats = models.SmallIntegerField(verbose_name='Tłuszcze:', blank=True)
+    saturated_fats = models.SmallIntegerField(verbose_name='W tym tłuszcze nasycone:', blank=True)
+    carbohydrates = models.SmallIntegerField(verbose_name='Węglowodany:', blank=True)
+    sugars = models.SmallIntegerField(verbose_name='W tym cukry:', blank=True)
+    cholesterol = models.SmallIntegerField(verbose_name='Cholesterol:', blank=True)
+    fiber = models.SmallIntegerField(verbose_name='Błonnik:', blank=True)
